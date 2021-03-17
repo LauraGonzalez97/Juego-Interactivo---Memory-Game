@@ -1,0 +1,463 @@
+@import "lib/vars";
+@import "lib/mixins";
+@import "lib/reboot";
+@import "lib/fontawesome/font-awesome";
+
+@import "lib/keyframes";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("/assets/img/backgroundgame.jpg");
+}
+
+h1 {
+  color: #158a75;
+  font-weight: 400;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.card,
+.reset-btn {
+  cursor: pointer;
+}
+
+//VENTANA STAR GAME
+
+.control-buttons {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(11, 167, 146, 0.7);
+}
+
+.control-buttons span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eb6d6a;
+  color: #fff;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  padding: 15px 25px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+//
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  background-color: #eb6e6a;
+  border-radius: 1rem;
+  border: none;
+  color: rgb(255, 255, 255);
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  padding: 0.8rem;
+}
+
+.btn:hover,
+.btn:focus {
+  color: rgb(143, 206, 146);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.timer-container {
+  background: #eb6e6a;
+  border-radius: 0.5rem;
+  color: rgb(255, 255, 255);
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+
+  padding: 0.5rem;
+
+  margin-left: 30rem;
+}
+
+p.stats {
+  font-weight: 600;
+}
+
+p.stats:last-child {
+  margin-bottom: 1em;
+}
+
+.deck {
+  background: linear-gradient(to bottom, #4acab3, #329c89);
+  border-radius: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3em;
+  height: 40rem;
+  width: 40rem;
+  margin-top: 3rem;
+}
+
+//
+.deck,
+.card {
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+// MODAL TWEET (ventana modal)
+
+.modal_tweet {
+  visibility: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+  grid-template-rows: 2rem auto 1fr;
+
+  .modal_overlay {
+    grid-area: 1 / 1/ -1 /-1;
+    background-color: rgba(91, 112, 131, 0.4);
+  }
+
+  .modal_holder {
+    grid-area: 2 / 2 / span 1 / span 1;
+    border-radius: 30px;
+
+    .modal_header {
+      padding: 1rem 2rem;
+    }
+
+    .modal_body {
+      padding: 0rem 2rem 1rem;
+    }
+  }
+
+  &.opened {
+    visibility: visible;
+  }
+}
+
+//
+//VENTANA MODAL
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin: 5% auto;
+  border-radius: 50px;
+  padding-right: 1rem;
+  width: 100%;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  max-width: 50rem;
+  margin-top: 16rem;
+}
+
+.modal-img {
+  display: inline-block;
+  margin: 1em 0 1em;
+  width: 20em;
+}
+
+//PAREJA FRUTAS
+
+.info-container {
+  width: 650px;
+  margin: 20px auto 0;
+  background-color: white;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  border: 2px solid #eb6e6a;
+  border-radius: 50px;
+  .name {
+    visibility: visible;
+  }
+}
+
+.info-container .name {
+  float: left;
+  width: 50%;
+}
+
+.info-container .tries {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+.memory-game-blocks {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.memory-game-blocks.no-clicking {
+  pointer-events: none;
+}
+
+.memory-game-blocks .game-block {
+  height: 150px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+}
+
+.memory-game-blocks .game-block .front {
+  background-color: #ffc93e;
+  line-height: 130px;
+}
+
+.memory-game-blocks .game-block .front:before {
+  content: "?";
+  color: #eb6e6a;
+  font-size: 130px;
+  font-weight: bold;
+}
+
+.memory-game-blocks .game-block .back {
+  background-color: #70e7d1;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  border-radius: 15px;
+
+  transform: rotateY(180deg);
+
+  margin-top: -130px;
+}
+
+.memory-game-blocks .game-block .face {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+//PRUEBA
+
+//VENTANA STAR GAME
+
+.button-victory {
+  left: 0;
+  top: 0;
+}
+
+.button-victory span {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eb6d6a;
+  color: #fff;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 28rem;
+}
+
+.play-again-btn {
+  background: #eb6e6a;
+  margin-bottom: 1em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -10px;
+  margin-left: -21rem;
+}
+
+// TITULO MEMORY GAME
+
+.titulo_juego {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#logo {
+  color: #c44032;
+  font-family: "FranchiseRegular", "HelveticaNeue-Bold", "League Gothic", "Impact", sans-serif;
+  font-size: 160px;
+  font-weight: normal;
+  margin-bottom: -32px;
+  margin-left: 10px;
+  margin-top: 30px;
+  text-shadow: -4px 4px 0 #863027;
+  text-transform: uppercase;
+}
+#logo span {
+  display: inline-block;
+  letter-spacing: -1px;
+  position: relative;
+}
+#logo span:hover {
+  top: 3px;
+}
+#logo .char2,
+#logo .char11 {
+  color: #e36b23;
+  text-shadow: -4px 4px 0 #9b4d1f;
+}
+#logo .char3,
+#logo .char10 {
+  color: #e6c92e;
+  text-shadow: -4px 4px 0 #9c8b26;
+}
+#logo .char4,
+#logo .char9 {
+  color: #5da028;
+  text-shadow: -4px 4px 0 #427021;
+}
+#logo .char5,
+#logo .char8 {
+  color: #4584be;
+  text-shadow: -4px 4px 0 #2f597f;
+}
+#logo .char6,
+#logo .char7 {
+  color: #7073cf;
+  text-shadow: -4px 4px 0 #4a4d88;
+}
+
+#logo .char4 {
+  top: -7px;
+}
+#logo .char6 {
+  top: -7px;
+}
+
+#logo .char8 {
+  top: 1px;
+}
+
+#logo .char10 {
+  top: -65px;
+  width: 36px;
+}
+
+#logo .char11 {
+  left: -30px;
+  top: 2px;
+  width: 50px;
+}
+#logo .char12 {
+  left: -24px;
+}
+#carbonads-container {
+  margin: 0 10px !important;
+}
+
+//RESPONSIVE MOVILE (556px X 866px)
+
+@media screen and (max-width: 556px) {
+  #logo {
+    height: 300px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: -24px !important;
+    position: relative;
+    top: -20px;
+    transform: scale(0.5);
+  }
+
+  .info-container {
+    width: 400px;
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  .deck {
+    height: 30rem;
+    width: 31rem;
+  }
+
+  .memory-game-blocks .game-block {
+    height: 118px;
+    width: 118px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-top: -6px;
+  }
+
+  .memory-game-blocks .game-block .front:before {
+    font-size: 100px;
+  }
+  .memory-game-blocks .game-block .front {
+    background-color: #ffc93e;
+    line-height: 100px;
+  }
+  
+  .memory-game-blocks .game-block .back {
+    margin-top: -100px;
+  }
+  img {
+    width: 100px;
+  }
+  .button-victory span {
+    margin-left: 19rem;
+  }
+  
+  .play-again-btn {
+    margin-left: -12rem;
+  }
+}
