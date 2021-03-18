@@ -1,183 +1,196 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="theme-color" content="#fafafa" />
-    
-        <title>Memory Game</title>
-    
-        <meta name="description" content="" />
-        <link rel="apple-touch-icon" href="./assets/img/icon.png" />
-        <link rel="icon" href="./assets/img/favicon.png" />
-        <link rel="stylesheet" href="./assets/sass/main.css" />
-        <link href="./assets/sass/main.css.map" />
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#fafafa" />
 
-        <div class="control-buttons">
-            <span>Start Game</span>
-        </div>
-        <div class="titulo_juego">
-            <h1 id="logo"><span class="char1">M</span><span class="char2">e</span><span class="char3">m</span><span
+    <title>Memory Game</title>
+
+    <meta name="description" content="" />
+    <link rel="apple-touch-icon" href="./assets/img/icon.png" />
+    <link rel="icon" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/sass/main.css" />
+    <link href="./assets/sass/main.css.map" />
+</head>
+
+<body>
+
+    <div style="background-image: url('assets/img/backgroundgame.jpg');"> 
+
+
+
+    <div class="control-buttons">
+        <span>Start Game</span>
+    </div>
+    <div class="titulo_juego">
+        <h1 id="logo"><span class="char1">M</span><span class="char2">e</span><span class="char3">m</span><span
                 class="char4">o</span><span class="char5">r</span><span class="char6">y</span><span
                 class="char1">g</span><span class="char2">a</span><span class="char3">m</span><span
                 class="char4">e</span>
-            </h1>
-    
-        </div>
-    
-        <div class="container">
-            
-            <div class="info-container">
-                <div class="name">
-                    Hello:<span></span>
-                </div>
-                <div class="tries">
-                    Wrong Tries: <span>0</span>
-                </div>
+        </h1>
+
+    </div>
+
+    <div class="container">
+
+        <div class="info-container">
+            <div class="name">
+                Hello:<span></span>
             </div>
-    
-            <ul class="deck">
-                <div class="memory-game-blocks">
-    
-    
-                    <div class="game-block" data-technology="aguacate">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/aguacate.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="aguacate">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/aguacate.png" alt="">
-                        </div>
-                    </div>
-    
-    
-                    <div class="game-block" data-technology="cereza">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/cereza.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="cereza">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/cereza.png" alt="">
-                        </div>
-                    </div>
-    
-    
-                    <div class="game-block" data-technology="limon">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/limon.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="limon">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/limon.png" alt="">
-                        </div>
-                    </div>
-    
-    
-                    <div class="game-block" data-technology="manzana">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/manzana.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="manzana">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/manzana.png" alt="">
-                        </div>
-                    </div>
-    
-    
-                    <div class="game-block" data-technology="naranja">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/naranja.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="naranja">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/naranja.png" alt="">
-                        </div>
-                    </div>
-    
-    
-                    <div class="game-block" data-technology="pera">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/pera.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="pera">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/pera.png" alt="">
-                        </div>
-                    </div>
-    
-    
-                    <div class="game-block" data-technology="sandia">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/sandia.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="sandia">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/sandia.png" alt="">
-                        </div>
-                    </div>
-    
-    
-                    <div class="game-block" data-technology="uva">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/uva.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-block" data-technology="uva">
-                        <div class="face front"></div>
-                        <div class="face back">
-                            <img src="/assets/img/frutas/uva.png" alt="">
-                        </div>
-                    </div>
-    
-                </div>
-            </ul>
-    
-            <div class="button-victory">
-                <span>¡Nivel 1 Completado!</span>
+            <div class="tries">
+                Wrong Tries: <span>0</span>
             </div>
-    
-            <a href="nivel2.html" button class="btn play-again-btn">Siguiente Nivel</a></button>
-    
-    
         </div>
+
+        <ul class="deck">
+            <div class="memory-game-blocks">
+
+
+                <div class="game-block" data-technology="aguacate">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/aguacate.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="aguacate">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/aguacate.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="game-block" data-technology="cereza">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/cereza.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="cereza">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/cereza.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="game-block" data-technology="limon">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/limon.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="limon">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/limon.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="game-block" data-technology="manzana">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/manzana.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="manzana">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/manzana.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="game-block" data-technology="naranja">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/naranja.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="naranja">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/naranja.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="game-block" data-technology="pera">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/pera.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="pera">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/pera.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="game-block" data-technology="sandia">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/sandia.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="sandia">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/sandia.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="game-block" data-technology="uva">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/uva.png" alt="">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="uva">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="assets/img/frutas/uva.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </ul>
+
+        <div class="button-victory">
+            <span>¡Nivel 1 Completado!</span>
+        </div>
+
+        <a href="nivel2.html" button class="btn play-again-btn">Siguiente Nivel</a></button>
+
+
+
+
+
+
+    </div>
+
+
+
+    <!--Ventana modal Victoria-->
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     
     
-    
-        <!--Ventana modal Victoria-->
-    
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    
-    
-    
-        <script src="./app/main.js"></script>
-    </body>
-    
+
+
+
+
+    <script src="./app/main.js"></script>
+</body>
+
 
 
 

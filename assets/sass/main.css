@@ -3398,10 +3398,6 @@ html {
           box-sizing: border-box;
 }
 
-body {
-  background: url("/assets/img/backgroundgame.jpg");
-}
-
 h1 {
   color: #158a75;
   font-weight: 400;
@@ -3656,6 +3652,7 @@ p.stats:last-child {
   cursor: pointer;
   padding: 10px;
   position: relative;
+  width: 150px;
 }
 
 .memory-game-blocks .game-block .front {

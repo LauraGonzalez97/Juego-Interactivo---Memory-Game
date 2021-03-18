@@ -3398,10 +3398,6 @@ html {
           box-sizing: border-box;
 }
 
-body {
-  background: url("/assets/img/backgroundgame.jpg");
-}
-
 h1 {
   color: #158a75;
   font-weight: 400;

@@ -154,7 +154,7 @@ document.querySelector(".button-victory").onclick = function () {
     Swal.fire({
         title: '¡Ganaste!',
         text: 'Prueba con el siguiente nivel',
-        imageUrl: '/assets/img/aguacate-victoria.jpg',
+        imageUrl: 'assets/img/aguacate-victoria.jpg', 
     })
 
 

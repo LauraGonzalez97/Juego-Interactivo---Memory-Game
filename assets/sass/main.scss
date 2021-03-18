@@ -5,6 +5,8 @@
 
 @import "lib/keyframes";
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -20,9 +22,7 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  background: url("/assets/img/backgroundgame.jpg");
-}
+
 
 h1 {
   color: #158a75;
@@ -235,6 +235,7 @@ p.stats:last-child {
   margin: 20px auto;
 }
 
+
 .memory-game-blocks.no-clicking {
   pointer-events: none;
 }
@@ -246,6 +247,9 @@ p.stats:last-child {
   cursor: pointer;
   padding: 10px;
   position: relative;
+
+  width: 150px;
+  
 }
 
 .memory-game-blocks .game-block .front {
